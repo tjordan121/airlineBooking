@@ -1,0 +1,14 @@
+{% extends "users/layout.html" %}
+
+{% block body %}
+    <!-- inside django templates I have access to the 'request' that was used to make this HTTP request including 'user' associated with http request -->
+    <H1>Welcome, {{ request.user.first_name }} </H1> 
+
+    <ul>
+        <li>Username: {{ request.user.username }}</li>
+        <li>Email: {{ request.user.email }}</li>
+    </ul>
+
+    <a href="{% url 'logout' %}">Log Out</a>
+
+{% endblock %}
